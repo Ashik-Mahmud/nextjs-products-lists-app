@@ -28,7 +28,7 @@ I am pretty happy to create it.
 
 ## Using Dummy API Endpoints
 
-#### (https://dummyjson.com/docs/products)[https://dummyjson.com/docs/products]
+#### [https://dummyjson.com/docs/products](https://dummyjson.com/docs/products)
 
 ## Image Preview for App
 
