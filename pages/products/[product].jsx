@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
 import { useGetProductQuery } from "../../services/ProductApi";
@@ -16,7 +17,8 @@ const ProductDetails = () => {
       <Head>
         <title>{data?.title}</title>
       </Head>
-      <div className="container mx-auto pb-10">
+      <div className="container mx-auto m-10 shadow p-10">
+        <Link href="/products"> Back</Link>
         <div className="title  flex items-center justify-between">
           <h3 className="text-2xl font-bold my-6">{data?.title}</h3>
           <span>{data?.category}</span>
