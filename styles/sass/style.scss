@@ -1,0 +1,20 @@
+.card {
+  position: relative;
+  background: #f3f3f3;
+  padding: 1rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  margin: 2rem 0rem;
+  h1 {
+    font-size: 2rem;
+    margin: 1rem 0rem;
+  }
+}
+
+.filter {
+  background-color: rgba(241, 241, 241, 0.76);
+  padding: 1rem;
+  input {
+    font-family: "poppins";
+  }
+}

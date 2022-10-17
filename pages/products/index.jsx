@@ -1,10 +1,17 @@
 import Head from "next/head";
-import React from "react";
+import React, { useState } from "react";
 import Card from "../../components/Card";
 import { useGetProductsQuery } from "../../services/ProductApi";
+
 const ProductDefault = () => {
+  const [searchText, setSearchText] = useState("");
   const { data, isLoading } = useGetProductsQuery();
   if (isLoading) return "loading...";
+
+  /* Handle Search text */
+  const handleSearchText = () => {
+    console.log(searchText);
+  };
 
   return (
     <>
@@ -22,9 +29,16 @@ const ProductDefault = () => {
               <input
                 type="search"
                 placeholder="Search by Name or Category..."
+                onChange={(event) => setSearchText(event.target.value)}
                 className="p-2 border border-gray-300 rounded outline-none"
+                value={searchText}
               />
-              <button className="bg-sky-400 p-3 text-white">Search</button>
+              <button
+                className="bg-sky-400 p-3 text-white"
+                onClick={handleSearchText}
+              >
+                Search
+              </button>
             </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
