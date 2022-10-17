@@ -17,4 +17,13 @@
   input {
     font-family: "poppins";
   }
+  .category {
+    padding: 0rem 0.5rem;
+    select {
+      position: relative;
+      padding: 0.6rem;
+      cursor: pointer;
+      outline: none;
+    }
+  }
 }
