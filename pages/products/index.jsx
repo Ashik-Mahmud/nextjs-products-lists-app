@@ -13,9 +13,19 @@ const ProductDefault = () => {
       </Head>
       <div>
         <div className="container mx-auto">
-          <div className="title  py-10">
-            <h3 className="text-2xl font-bold">All Products</h3>
-            <span className="block w-20 bg-lime-500 h-1"></span>
+          <div className="flex items-center justify-between">
+            <div className="title  py-10">
+              <h3 className="text-2xl font-bold">All Products</h3>
+              <span className="block w-20 bg-lime-500 h-1"></span>
+            </div>
+            <div className="filter flex items-stretch">
+              <input
+                type="search"
+                placeholder="Search by Name or Category..."
+                className="p-2 border border-gray-300 rounded outline-none"
+              />
+              <button className="bg-sky-400 p-3 text-white">Search</button>
+            </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {data?.products?.map((product) => (
