@@ -1,17 +1,12 @@
 import Head from "next/head";
 import React, { useState } from "react";
 import Card from "../../components/Card";
-import { useGetProductsQuery } from "../../services/ProductApi";
+import { useGetSearchProductsQuery } from "../../services/ProductApi";
 
 const ProductDefault = () => {
   const [searchText, setSearchText] = useState("");
-  const { data, isLoading } = useGetProductsQuery();
+  const { data: searchData, isLoading } = useGetSearchProductsQuery(searchText);
   if (isLoading) return "loading...";
-
-  /* Handle Search text */
-  const handleSearchText = () => {
-    console.log(searchText);
-  };
 
   return (
     <>
@@ -33,16 +28,11 @@ const ProductDefault = () => {
                 className="p-2 border border-gray-300 rounded outline-none"
                 value={searchText}
               />
-              <button
-                className="bg-sky-400 p-3 text-white"
-                onClick={handleSearchText}
-              >
-                Search
-              </button>
+              <button className="bg-sky-400 p-3 text-white">Search</button>
             </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {data?.products?.map((product) => (
+            {searchData?.products?.map((product) => (
               <Card key={product?.id} product={product} />
             ))}
           </div>
